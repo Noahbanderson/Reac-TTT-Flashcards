@@ -20,6 +20,11 @@ const Navbar = () => (
         Flashcards
       </Menu.Item>
     </Link>
+    <Link to="/tictactoetwo">
+      <Menu.Item>
+        TicTacToe Two Player
+      </Menu.Item>
+    </Link>
   </Menu>
 )
 export default Navbar

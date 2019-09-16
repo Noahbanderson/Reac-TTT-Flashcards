@@ -20,18 +20,17 @@ class Tictactoe extends React.Component {
   }
 
   squarePressed = (i) => {
-    const oppo = !i.clicked
     this.setState({
       boxes: this.state.boxes.map(box => {
         if (box.id === i.id) {
-          return { id: i.id, clicked: oppo }
+          return { id: i.id, clicked: !i.clicked }
         } else {
           return box
         }
       })
     })
-
     this.setState({ arrUserChoices: [i.id, ...this.state.arrUserChoices] }, () => this.gameLogic(this.state.arrUserChoices))
+  
   }
 
 
@@ -58,17 +57,7 @@ class Tictactoe extends React.Component {
     }
 
   }
-
-  winningFunction = (array, winners) => {
-    if (array === this.state.arrCompChoices) {
-      alert(`Computer Wins! With squares: ${winners}`)
-    } else if (array === this.state.arrUserChoices) {
-      alert(`You Win! With squares: ${winners}`)
-    }
-
-  }
-
-
+  
   gameLogic = (array) => {
 
     if (array.includes(1) && array.includes(2) && array.includes(3)) {
@@ -91,6 +80,15 @@ class Tictactoe extends React.Component {
 
     } else {
       this.compChoice()
+    }
+    
+  }
+  
+  winningFunction = (array, winners) => {
+    if (array === this.state.arrCompChoices) {
+      alert(`Computer Wins! With squares: ${winners}`)
+    } else if (array === this.state.arrUserChoices) {
+      alert(`You Win! With squares: ${winners}`)
     }
 
   }
@@ -116,4 +114,3 @@ class Tictactoe extends React.Component {
 }
 
 export default Tictactoe
-

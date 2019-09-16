@@ -6,6 +6,7 @@ import About from './components/About'
 import Flashcards from './components/Flashcards'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
+import Tictactoetwo from './components/Tictactoetwo'
 
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
       <Route exact path="/flashcards" component={Flashcards} />
+      <Route exact path="/tictactoetwo" component={Tictactoetwo} />
       <Route component={NoMatch}/>
     </Switch>
   </Container>
